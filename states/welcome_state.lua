@@ -1,12 +1,13 @@
+local class = require("class")
 local GameState = require("states/game_state")
 local PlayingState = require("states/playing_state")
 local CountdownState = require("states/countdown_state")
 local Manager = require("manager")
 
-local WelcomeState = GameState:new()
+local WelcomeState = class(GameState)
 
 function WelcomeState:keypressed(key)
-  Manager.setActiveState(CountdownState:new(3, PlayingState:new()))
+  Manager.setActiveState(CountdownState.new(3, PlayingState.new()))
 end
 
 function WelcomeState:draw()

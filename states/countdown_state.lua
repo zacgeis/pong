@@ -1,13 +1,13 @@
+local class = require("class")
+
 local GameState = require("states/game_state")
 local Manager = require("manager")
 
-local CountdownState = GameState:new()
+local CountdownState = class(GameState)
 
-function CountdownState:new(timeLimit, nextState)
-  local newObj = {timeLimit = timeLimit + 1, nextState = nextState}
-  self.__index = self
-  setmetatable(newObj, self)
-  return newObj
+function CountdownState:__init(timeLimit, nextState)
+  self.timeLimit = timeLimit + 1
+  self.nextState = nextState
 end
 
 function CountdownState:update(dt)

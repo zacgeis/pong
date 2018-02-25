@@ -1,6 +1,7 @@
+local class = require("class")
 local GameState = require("states/game_state")
 
-local PlayingState = GameState:new()
+local PlayingState = class(GameState)
 
 function PlayingState:keypressed(key)
 end

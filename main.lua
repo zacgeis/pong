@@ -7,7 +7,7 @@ local Manager = require("manager")
 local WelcomeState = require("states/welcome_state")
 
 function love.load()
-  Manager.setActiveState(WelcomeState:new())
+  Manager.setActiveState(WelcomeState.new())
 end
 
 function love.draw()

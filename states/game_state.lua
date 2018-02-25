@@ -1,11 +1,6 @@
-local GameState = {}
+local class = require("class")
 
-function GameState:new()
-  local newObj = {}
-  self.__index = self
-  setmetatable(newObj, self)
-  return newObj
-end
+local GameState = class()
 
 function GameState:draw()
 end

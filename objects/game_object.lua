@@ -1,10 +1,5 @@
-local GameObject = {}
+local class = require("class")
 
-function GameObject:new()
-  local newObj = {}
-  self.__index = self
-  setmetatable(newObj, self)
-  return newObj
-end
+local GameObject = class()
 
 return GameObject
